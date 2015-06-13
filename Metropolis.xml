@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+  <channel>
+    <title>Metropolis on KCRW</title>
+    <link>http://192.168.1.198/podcast/Metropolis.html</link>
+    <description>Weekly episode of Metropolis</description>
+    <itunes:image href="http://192.168.1.198/podcast/img/kcrw.jpg” />
+    <language>en-us</language>
+    <pubDate>Fri, 7 Feb 2014 17:00:00 GMT</pubDate>
+
+<!-- INSERTION POINT -->
+
+
+  </channel>
+
+</rss>
