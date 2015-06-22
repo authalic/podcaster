@@ -2,90 +2,80 @@
 KCRW program information scraper
 
 Author:  Justin Johnson
-Date:    August 9, 2012
-Updated: Feb 6, 2014
+rewritten: Jun 21, 2015
 
 This module extracts a daily program description from each day's playlist on KCRW.com
 The main method of this module is called at the end of each day's rip, and the description
-is written into the XML file for that day's podcast, so it appears in iTunes and on iPods.
+is written into the XML file for that day's podcast. It then appears in iTunes and on iPods.
 '''
 
 import time
 import urllib
-import re
+import json
 
 # get the current date
 today = time.localtime()
 
 # extract the year, month, and day as strings
 year = str(today[0])
-mon = str(today[1]).zfill(2)
-day = str(today[2]).zfill(2)
+mon = str(today[1]).zfill(2) # pad single-digit months
+day = str(today[2]).zfill(2) # pad single-digit days
 
 # build a dictionary of URLs to request the program's playlist info
 
-playlistInfo = {       
-                "MBE"           : "http://newmedia.kcrw.com/tracklists/index.php?search_type=0&date_from=" + mon + "%2F" + day + "%2F" + year + "&host=Morning+Becomes+Eclectic&date_to=&artist=&channel=Simulcast&label=",
-                "Rollins"       : "http://newmedia.kcrw.com/tracklists/index.php?search_type=0&date_from=" + mon + "%2F" + day + "%2F" + year + "&host=Henry+Rollins&date_to=&artist=&channel=Simulcast&label=",
-                "Metropolis"    : "http://newmedia.kcrw.com/tracklists/index.php?search_type=0&date_from=" + mon + "%2F" + day + "%2F" + year + "&host=Metropolis&date_to=&artist=&channel=Simulcast&label="
+playlistInfo = {
+                "MBE"        : "http://tracklist-api.kcrw.com/Simulcast/date/" + year + "/" + mon + "/" + day + "?program=mb",
+                "Rollins"    : "http://tracklist-api.kcrw.com/Simulcast/date/" + year + "/" + mon + "/" + day + "?program=hr",
+                "Metropolis" : "http://tracklist-api.kcrw.com/Simulcast/date/" + year + "/" + mon + "/" + day + "?program=mt"
                 }
 
-# Extract the program info from the playlist HTML file using a blunt method
-# Read the entire HTML file
-# look for the <span id = "showTab"> tag
-# extract the contents of those tags and strip out any HTML tags 
 
-def findSpan(KCRWlines, programName):
-    '''Search a list of lines from an HTML file
-    Return the block of HTML containing the program info'''
-
-    span = ""
-    spanCount = 0
-    
-    # this method looks specifically for the substring '<span id="showTab">'
-    # if that spelling is altered in any way, this method will fail
-    
-    for line in KCRWlines:
-        if (('<span id="showTab">' in line and spanCount == 0) or (spanCount > 0)):
-            span = span + line
-            spanCount += len([m.start() for m in re.finditer("<SPAN", line.upper())])
-            spanCount -= len([m.start() for m in re.finditer("</SPAN", line.upper())])
-    
-        # remove the words "LISTEN" and "WATCH" which might get included at the end of some descriptions
-        
-        if ("LISTEN" in span or "WATCH" in span):
-            span = span[:min(span.find("LISTEN"), span.find("WATCH"))]
-        
-    # return a generic description if this operation fails to grab something off the web
-    
-    if (span == "" and programName == "MBE"):
-        return "Morning Becomes Eclectic on KCRW"
-    elif (span == "" and programName == "Rollins"):
-        return "Henry Rollins Show on KCRW"
-    elif (span == "" and programName == "Metropolis"):
-        return "Metropolis on KCRW" 
-    else:
-        return span
-
-
-def stripTags(htmlcode):
-    '''Strips all HTML tags from a string using regular expression'''
-    
-    return re.sub('<[^<]+?>', '', htmlcode).strip()
-
+# Extract the program info
+# Tracklist API returns a JSON file with show info and track list
 
 def getShowInfo(programName):
     '''Returns the program summary from the KCRW playlist page for the current day's program'''
     
-    # use the appropriate URL for the program.
+    # use the appropriate URL for the program 
     
-    KCRWfile = urllib.urlopen(playlistInfo[programName])
-    KCRWlines = KCRWfile.readlines()
-    KCRWfile.close()
+    KCRWurl  = urllib.urlopen(playlistInfo[programName])
+    KCRWfile = KCRWurl.read()
+    KCRWjson = json.loads(KCRWfile)
+    KCRWurl.close()
+    
+    # Get the element values from the JSON object
+    # Empty or Null values in the JSON will be converted to None objects
+    
+    hostname  = KCRWjson[0]["host"]
+    guestname = KCRWjson[0]["guest"]
+    action    = KCRWjson[0]["action"]
+    location  = KCRWjson[0]["location"]
+    starttime = KCRWjson[0]["performance_start"]
 
-    showTab = findSpan(KCRWlines, programName)
+    # the "live" value seems to be "True" or "False" in the JSON.
+    # json module converts "True" to boolean True
+    # converts "False" to None
+    liveshow = KCRWjson[0]["live"]
 
-    showText = stripTags(showTab)
+    # build the show info string
+    # example:  'Hosted by: Anne Litt. Surfer Blood Performs Live In Studio at 11:15 AM'
+    
+    showText = ""
+    
+    if hostname:
+        showText = "Hosted by " + hostname
+    
+    if guestname:
+        showText = showText + ". " + guestname + " " + action + " " + ("Live " if liveshow else "") + location + " at " + starttime
+    
+    # return a generic description if this operation fails to grab something off the web
+    # otherwise, return the full description
 
-    return showText
-
+    if (showText == "" and programName == "MBE"):
+        return "Morning Becomes Eclectic on KCRW"
+    elif (showText == "" and programName == "Rollins"):
+        return "Henry Rollins Show on KCRW"
+    elif (showText == "" and programName == "Metropolis"):
+        return "Metropolis on KCRW" 
+    else:
+        return str(showText)  # convert from Unicode string to String
