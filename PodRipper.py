@@ -6,9 +6,7 @@
 import urllib
 import time
 import sys
-import traceback
 import tempfile
-import os
 import os.path
 import shutil  # high-level operations on files (copy and removal)
 import KCRWscraper  # provides method for obtaining episode description from the KCRW playlist site
@@ -18,7 +16,7 @@ from mutagen.id3 import TIT2, TPE1, TALB, TYER, TCON  # ID3 Tags
 
 # Requirements:
 # Mutagen library, for MP3 tagging
-#     get mutagen library at: https://code.google.com/p/mutagen/
+#     get mutagen library at: https://pypi.python.org/pypi/mutagen
 # KCRWscraper.py
 #     manages the KCRW-specific functions, including obtaining the current URL of the MP3 stream,
 #     and obtaining the description of each recorded episode from the online show summary.
