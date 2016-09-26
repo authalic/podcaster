@@ -127,7 +127,6 @@ while time.time() - starttime < riplength:
     
     ripbytes = bytestream.read(20000)  #20000 bytes = 1 sec of recording @ 160kbps
     ripfile.write(ripbytes)
-    logfile.write(time.asctime() + " - " + str(len(ripbytes)) + "\n")
 
 
 #Problem Here:

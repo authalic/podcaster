@@ -58,7 +58,7 @@ def getShowInfo(programName):
     liveshow = KCRWjson[0]["live"]
 
     # build the show info string
-    # example:  'Hosted by: Anne Litt. Surfer Blood Performs Live In Studio at 11:15 AM'
+    # example:  'Hosted by Anne Litt. Surfer Blood Performs Live In Studio at 11:15 AM'
     
     showText = ""
     
