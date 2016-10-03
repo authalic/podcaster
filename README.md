@@ -16,7 +16,7 @@ Record a scheduled streaming audio feed, save it as an MP3, serve it as a podcas
   *  Web files are served out of `/var/www/html/`
 4.  Create the following folders
   *  `/var/www/html/podcast/`
-  *  `/var/www/html/podcast/media/'
+  *  `/var/www/html/podcast/media/`
   *  `/user/pi/podcast/`
   *  Set the ownership to `pi` user
   *  Set the permissions to read, write, execute `777`
