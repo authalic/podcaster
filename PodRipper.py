@@ -200,7 +200,7 @@ newitem = '''
           url="%s"
           length="%i"
           type="audio/mpeg" />
-        <description>%s</description>
+        <itunes:summary>%s</itunes:summary>
         <pubDate>%s</pubDate>
       </item>''' % (itemtitle, itemurl, itemlength, programdesc, pubDate)
 
@@ -215,10 +215,7 @@ RSSoutputText = ""
 
 for line in RSSinput:
 
-    if line[:13] == "    <pubDate>":
-        #update the pubDate tag in the Channel element
-        RSSoutputText = RSSoutputText + "    <pubDate>%s</pubDate>\n" % (pubDate)
-    elif "<!-- INSERTION POINT -->" in line:
+    if "<!-- INSERTION POINT -->" in line:
         #insert the new item here
         RSSoutputText = RSSoutputText + line + newitem
     else:
