@@ -18,13 +18,13 @@ Record a scheduled streaming audio feed, save it as an MP3, serve it as a podcas
   *  `/var/www/html/podcast/`
   *  `/var/www/html/podcast/media/`
   *  `/user/pi/podcast/`
-  *  Set the ownership to `pi` user
-  *  Set the permissions to read, write, execute `777`
-4.  Copy the Python scripts from this repository to `/user/pi/python`
-5.  Copy the xml and html files to `/var/www/html/podcast/`
-6.  Install the [mutagen Python library](https://pypi.python.org/pypi/mutagen) for MP3 tagging
+  *  Set the ownership to `pi` user `sudo chown pi:pi *.*`
+5.  Copy the Python scripts from this repository to `/user/pi/python`
+6.  Copy the xml and html files to `/var/www/html/podcast/`
+  *  Change the permissions of the xml files: `chmod 766 *.xml`
+7.  Install the [mutagen Python library](https://pypi.python.org/pypi/mutagen) for MP3 tagging
   *  $ `pip install mutagen`
-7.  Schedule the recordings using Cron
+8.  Schedule the recordings using Cron
   *  $ `crontab -e` to edit the crontab
   *  `# 0 16 * * 1-5 python /user/pi/python/PodRipper.py MBE 180`
   
