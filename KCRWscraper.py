@@ -27,9 +27,9 @@ def getShowInfo(programName, today):
     # build a dictionary of URLs to request the program's playlist info
 
     playlistInfo = {
-        "MBE": "http://tracklist-api.kcrw.com/Simulcast/date/" + year + "/" + mon + "/" + day + "?program=mb",
-        "Rollins": "http://tracklist-api.kcrw.com/Simulcast/date/" + year + "/" + mon + "/" + day + "?program=hr",
-        "Metropolis": "http://tracklist-api.kcrw.com/Simulcast/date/" + year + "/" + mon + "/" + day + "?program=mt"
+        "MBE": "http://tracklist-api.kcrw.com/Simulcast/date/" + year + "/" + mon + "/" + day + "?program_id=mb",
+        "Rollins": "http://tracklist-api.kcrw.com/Simulcast/date/" + year + "/" + mon + "/" + day + "?program_id=hr",
+        "Metropolis": "http://tracklist-api.kcrw.com/Simulcast/date/" + year + "/" + mon + "/" + day + "?program_id=mt"
     }
     # use the appropriate URL for the program 
     
@@ -40,37 +40,43 @@ def getShowInfo(programName, today):
     
     # Get the element values from the JSON object
     # Empty or Null values in the JSON will be converted to None objects
-    
-    hostname  = KCRWjson[0]["host"]
-    guestname = KCRWjson[0]["guest"]
-    action    = KCRWjson[0]["action"]
-    location  = KCRWjson[0]["location"]
-    starttime = KCRWjson[0]["performance_start"]
 
-    # the "live" value seems to be "True" or "False" in the JSON.
-    # json module converts "True" to boolean True
-    # converts "False" to None
-    liveshow = KCRWjson[0]["live"]
+    # need to check if the JSON is empty before assigning the values below
 
-    # build the show info string
-    # example:  'Hosted by Anne Litt. Surfer Blood Performs Live In Studio at 11:15 AM'
+    if KCRWjson[0]:
     
-    showText = ""
-    
-    if hostname:
-        showText = "Hosted by " + hostname
-    
-    if guestname:
-        showText = showText + ". " + guestname + " " + action + " " + ("Live " if liveshow else "") + location + " at " + starttime
-    
-    # return a generic description if this operation fails to grab something off the web
-    # otherwise, return the full description
+        hostname  = KCRWjson[0]["host"]
+        guestname = KCRWjson[0]["guest"]
+        action    = KCRWjson[0]["action"]
+        location  = KCRWjson[0]["location"]
+        starttime = KCRWjson[0]["performance_start"]
 
-    if (showText == "" and programName == "MBE"):
-        return "Morning Becomes Eclectic on KCRW"
-    elif (showText == "" and programName == "Rollins"):
-        return "Henry Rollins Show on KCRW"
-    elif (showText == "" and programName == "Metropolis"):
-        return "Metropolis on KCRW" 
+        # the "live" value seems to be "True" or "False" in the JSON.
+        # json module converts "True" to boolean True
+        # converts "False" to None
+        liveshow = KCRWjson[0]["live"]
+
+        # build the show info string
+        # example:  'Hosted by Anne Litt. Surfer Blood Performs Live In Studio at 11:15 AM'
+
+        showText = ""
+
+        if hostname:
+            showText = "Hosted by " + hostname
+
+        if guestname:
+            showText = showText + ". " + guestname + " " + action + " " + ("Live " if liveshow else "") + location + " at " + starttime
+
+        # return a generic description if this operation fails to grab something off the web
+        # otherwise, return the full description
+
+        if (showText == "" and programName == "MBE"):
+            return "Morning Becomes Eclectic on KCRW"
+        elif (showText == "" and programName == "Rollins"):
+            return "Henry Rollins Show on KCRW"
+        elif (showText == "" and programName == "Metropolis"):
+            return "Metropolis on KCRW"
+        else:
+            return str(showText)  # convert from Unicode string to String
     else:
-        return str(showText)  # convert from Unicode string to String
+        return "Unable to obtain show info"
