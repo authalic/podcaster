@@ -9,33 +9,28 @@ The main method of this module is called at the end of each day's rip, and the d
 is written into the XML file for that day's podcast. It then appears in iTunes and on iPods.
 '''
 
-import time
 import urllib
 import json
-
-# get the current date
-today = time.localtime()
-
-# extract the year, month, and day as strings
-year = str(today[0])
-mon = str(today[1]).zfill(2) # pad single-digit months
-day = str(today[2]).zfill(2) # pad single-digit days
-
-# build a dictionary of URLs to request the program's playlist info
-
-playlistInfo = {
-                "MBE"        : "http://tracklist-api.kcrw.com/Simulcast/date/" + year + "/" + mon + "/" + day + "?program=mb",
-                "Rollins"    : "http://tracklist-api.kcrw.com/Simulcast/date/" + year + "/" + mon + "/" + day + "?program=hr",
-                "Metropolis" : "http://tracklist-api.kcrw.com/Simulcast/date/" + year + "/" + mon + "/" + day + "?program=mt"
-                }
 
 
 # Extract the program info
 # Tracklist API returns a JSON file with show info and track list
 
-def getShowInfo(programName):
+def getShowInfo(programName, today):
     '''Returns the program summary from the KCRW playlist page for the current day's program'''
-    
+
+    # extract the year, month, and day as strings
+    year = str(today[0])
+    mon = str(today[1]).zfill(2)  # pad single-digit months
+    day = str(today[2]).zfill(2)  # pad single-digit days
+
+    # build a dictionary of URLs to request the program's playlist info
+
+    playlistInfo = {
+        "MBE": "http://tracklist-api.kcrw.com/Simulcast/date/" + year + "/" + mon + "/" + day + "?program=mb",
+        "Rollins": "http://tracklist-api.kcrw.com/Simulcast/date/" + year + "/" + mon + "/" + day + "?program=hr",
+        "Metropolis": "http://tracklist-api.kcrw.com/Simulcast/date/" + year + "/" + mon + "/" + day + "?program=mt"
+    }
     # use the appropriate URL for the program 
     
     KCRWurl  = urllib.urlopen(playlistInfo[programName])

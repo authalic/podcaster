@@ -113,6 +113,11 @@ ripfile = tempfile.NamedTemporaryFile(mode='wb', delete=False)
 #obtain the start time/date of the rip for the RSS feed
 itemtitle = time.strftime("%B %d, %Y - %A")               #'July 03, 2007 - Tuesday'
 
+# get the current date for the show info lookup, in case the date changes before the end of the recording
+# Potential problem:
+# Raspberry Pi must be set to local timezone using raspi-config utility
+today = time.localtime()
+
 #start ripping
 
 bytestream = urllib.urlopen(streamURL) #open URL from web
@@ -159,7 +164,7 @@ logfile.write("Final MP3 file stored, updating RSS feed\n")
 itemurl = httppath + filename + ".mp3"                    #URL of MP3 file on http server
 
 # get today's program information from the KCRW website
-programdesc = KCRWscraper.getShowInfo(programname)
+programdesc = KCRWscraper.getShowInfo(programname, today)
 
 # add ID3 tags to the MP3 file
 
