@@ -31,8 +31,6 @@ from mutagen.id3 import TIT2, TPE1, TALB, TYER, TCON  # ID3 Tags
 # $> PodRipper [programname] [duration in minutes]
 
 
-playlistURL = "http://legacy.kcrw.com/pls/kcrwsimulcast.pls"
-
 # name of program to be recorded
 programname = sys.argv[1]  #currently supported:  "MBE" | "Rollins" | "Metropolis"
 
@@ -59,20 +57,7 @@ sys.stderr = logfile
 sys.stdout = logfile
 
 
-# get the URL of the data stream from the playlist file
-def getDatastreamURL(playlistURL):
-    "Extracts the first URL of an MP3 stream from a playlist file (*.pls) at playlistURL"
-    
-    playlistFile = urllib.urlopen(playlistURL)
-    playlistFileLines = playlistFile.readlines()
-    playlistFile.close()
-
-    for line in playlistFileLines:
-        if 'http' in line:
-            streamURL = line.split('=')[1]
-    return streamURL
-
-streamURL = getDatastreamURL(playlistURL)
+streamURL = "http://kcrw.streamguys1.com/kcrw_192k_mp3_on_air"  # updated Nov 2016
 
 
 def getPubDate():
