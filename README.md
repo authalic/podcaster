@@ -24,7 +24,11 @@ Record a scheduled streaming audio feed, save it as an MP3, serve it as a podcas
   *  Change the permissions of the xml files: `chmod 766 *.xml`
 7.  Install the [mutagen Python library](https://pypi.python.org/pypi/mutagen) for MP3 tagging
   *  $ `pip install mutagen`
-8.  Schedule the recordings using Cron
+8.  Install the [Request library](http://docs.python-requests.org) to get playlist info off the API
+  *  $ `pip install requests`
+9.  Schedule the recordings using Cron
   *  $ `crontab -e` to edit the crontab
   *  `# 0 16 * * 1-5 python /user/pi/python/PodRipper.py MBE 180`
+
+Note:  Raspberry Pi needs to be set to local timezone in raspi-config utility
   

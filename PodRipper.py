@@ -1,7 +1,12 @@
 # PodRipper.py
 #
+# Author:  Justin Johnson
+# updated: May 18, 2018
+#
 # Records an MP3 stream from the KCRW streaming audio feed to an MP3 file.
 # Manages the xml and MP3 files to allow for a subscription to the audio files as a podcast.
+
+
 
 import urllib
 import time
@@ -38,7 +43,7 @@ programname = sys.argv[1]  #currently supported:  "MBE" | "Rollins" | "Metropoli
 ripmin = float(sys.argv[2])
 riplength =  ripmin * 60 # length of rip (in seconds)
 
-
+# locations of files on the local server
 outputfolder = "/var/www/html/podcast/media/%s/" % (programname)  #MP3 is stored locally here
 httppath = "http://192.168.1.198/podcast/media/%s/" % (programname)   #podcast MP3 is served out by web server at this URL
 localRSSfile = "/var/www/html/podcast/%s.xml" % (programname)        #XML file containing the local copy of RSS feed
@@ -154,9 +159,9 @@ programdesc = KCRWscraper.getShowInfo(programname, today)
 # add ID3 tags to the MP3 file
 
 # Podcast naming conventions
-# TPE1 - Artist name "The Nerdist", "TWiT", or the hosts, etc.
+# TPE1 - Artist name: "The Nerdist"
 # TIT2 - Title of individual episode
-# TALB - Title of podcast: "Triangulation", "This Week in Tech", etc
+# TALB - Title of podcast: "This Week in Tech"
 # genre: podcast
 # media kind: podcast
 # description:  show notes
@@ -180,7 +185,11 @@ ID3tag.save()
 
 
 # get the final length of the MP3 file
-itemlength = os.path.getsize(localMP3file)                            #size of file in bytes
+itemlength = os.path.getsize(localMP3file) #size of file in bytes
+
+
+# add the new item to the XML feed
+# This should probably be done using a framework
 
 newitem = '''
 
