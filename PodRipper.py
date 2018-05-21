@@ -1,12 +1,12 @@
-# PodRipper.py
-#
-# Author:  Justin Johnson
-# updated: May 18, 2018
-#
-# Records an MP3 stream from the KCRW streaming audio feed to an MP3 file.
-# Manages the xml and MP3 files to allow for a subscription to the audio files as a podcast.
+'''
+PodRipper.py
 
+Author:  Justin Johnson
+updated: May 18, 2018
 
+Records an MP3 stream from the KCRW streaming audio feed to an MP3 file.
+Manages the xml and MP3 files to allow for a subscription to the audio files as a podcast.
+'''
 
 import urllib
 import time
@@ -17,23 +17,6 @@ import shutil  # high-level operations on files (copy and removal)
 import KCRWscraper  # provides method for obtaining episode description from the KCRW playlist site
 from mutagen.mp3 import MP3  # MP3 ID3 Tagging
 from mutagen.id3 import TIT2, TPE1, TALB, TYER, TCON  # ID3 Tags
-
-
-# Requirements:
-# Mutagen library, for MP3 tagging
-#     get mutagen library at: https://pypi.python.org/pypi/mutagen
-# KCRWscraper.py
-#     manages the KCRW-specific functions, including obtaining the current URL of the MP3 stream,
-#     and obtaining the description of each recorded episode from the online show summary.
-# xml (rss) file
-#     contains the RSS-compliant XML for use in a podcast subscription application
-# HTML document
-#     seems to be required by iTunes
-# log file
-#     created by this application for storing information about activity and crashes
-
-# command line functionality
-# $> PodRipper [programname] [duration in minutes]
 
 
 # name of program to be recorded
@@ -61,9 +44,12 @@ else:
 sys.stderr = logfile
 sys.stdout = logfile
 
+# get the current date for the show info lookup, in case the date changes before the end of the recording
+# Potential problem:
+# Raspberry Pi must be set to local timezone using raspi-config utility
+today = time.localtime()
 
 streamURL = "http://kcrw.streamguys1.com/kcrw_192k_mp3_on_air"  # updated Nov 2016
-
 
 def getPubDate():
     #create pubDate value for the tag in the RSS file
@@ -76,7 +62,6 @@ pubDate = getPubDate()
 def createFilename(programname):
 
     #create filename datestamp
-    today = time.localtime()
     year = today[0]
     month = today[1]
     day = today[2]
@@ -102,11 +87,6 @@ ripfile = tempfile.NamedTemporaryFile(mode='wb', delete=False)
 
 #obtain the start time/date of the rip for the RSS feed
 itemtitle = time.strftime("%B %d, %Y - %A")               #'July 03, 2007 - Tuesday'
-
-# get the current date for the show info lookup, in case the date changes before the end of the recording
-# Potential problem:
-# Raspberry Pi must be set to local timezone using raspi-config utility
-today = time.localtime()
 
 #start ripping
 

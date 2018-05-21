@@ -31,4 +31,6 @@ Record a scheduled streaming audio feed, save it as an MP3, serve it as a podcas
   *  `# 0 16 * * 1-5 python /user/pi/python/PodRipper.py MBE 180`
 
 Note:  Raspberry Pi needs to be set to local timezone in raspi-config utility
-  
+
+* command line call:
+`$> python PodRipper [programname] [duration in minutes]`
