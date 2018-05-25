@@ -40,6 +40,8 @@ def getShowInfo(programName, today):
     for track in tracklist:
         if "BREAK" in track['artist']:
             playlist += track['time'] + "  - BREAK -" + "\n"
+        elif track['label'] == "KCRW Live":
+            playlist += track['time'] + "  " + track['artist'] + " - " + track['title'] + " @ KCRW\n"
         else:
             playlist += track['time'] + "  " + track['artist'] + " - " + track['title'] + "\n"
 
