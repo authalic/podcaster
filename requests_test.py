@@ -8,9 +8,15 @@ import requests
 # get the tracklist from a date
 tracklist = requests.get(r'https://tracklist-api.kcrw.com/Simulcast/date/2018/05/15').json()
 
+playlist = ""
+
 for track in tracklist:
     if track['program_start'] == "09:00":
         if "BREAK" in track['artist']:
-            print(track['time'] + "  - BREAK -")
+            playlist += track['time'] + "  - BREAK -" + "\n"
+        elif track['label'] == "KCRW Live":
+            playlist += track['time'] + "  " + track['artist'] + " - " + track['title'] + " [Live @ KCRW]\n"
         else:
-            print(track['time'] + "  " + track['artist'] + " - " + track['title'] )
+            playlist += track['time'] + "  " + track['artist'] + " - " + track['title'] + "\n"
+
+print(playlist)
