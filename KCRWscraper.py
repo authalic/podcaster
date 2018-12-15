@@ -8,10 +8,9 @@ This module extracts a daily program information from KCRW.com
 The main method of this module is called at the end of each day's rip.
 The host name and playlist are written into the XML file for that day's podcast episode.
 '''
-import requests
 
+import requests
 # Extract the program info
-# Tracklist API returns a JSON file with show info and track list
 
 def getShowInfo(programName, today):
     '''Returns the program summary from the KCRW playlist page''''
@@ -21,22 +20,23 @@ def getShowInfo(programName, today):
     mon = str(today[1]).zfill(2)  # pad single-digit months
     day = str(today[2]).zfill(2)  # pad single-digit days
 
+    # start times are used to filter the program's playlist from the full-day playlist
     starttimes = {
         "MBE": "09:00",
         "Metropolis": "22:00",
         "Rollins": "20:00"
     }
 
-    # get the program info from the API
+    # Tracklist API returns a JSON file with show info and track list
     # get the complete tracklist from the specified date
     alltracklist = requests.get("http://tracklist-api.kcrw.com/Simulcast/date/" + year + "/" + mon + "/" + day).json()
 
     # filter out the tracks for the program, using the appropriate 'program_start' key value
     tracklist = [track for track in alltracklist if track['program_start'] == starttimes[programName]]
 
-    # create a playlist containg the start time, artist, and trackname for each track
     playlist = ""
 
+    # create a playlist line containing the start time, artist, and trackname for each track
     for track in tracklist:
         if "BREAK" in track['artist']:
             playlist += track['time'] + "  - BREAK -" + "\n"
