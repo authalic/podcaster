@@ -2,10 +2,18 @@
 PodRipper.py
 
 Author:  Justin Johnson
-updated: May 18, 2018
+updated: December 14, 2018
 
 Records an MP3 stream from the KCRW streaming audio feed to an MP3 file.
 Manages the xml and MP3 files to allow for a subscription to the audio files as a podcast.
+
+Goals for this version:
+    Update to Python 3
+    Use Requests module
+    Save metadata in a SQLite database
+    Use a more appropriate method to generate XML
+    Make file management on server easier?
+
 '''
 
 import urllib
