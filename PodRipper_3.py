@@ -13,6 +13,7 @@ Goals for this version:
     Save metadata in a SQLite database
     Use a more appropriate method to generate XML
     Make file management on server easier?
+    improve the logging capabilities
 
 '''
 
@@ -35,12 +36,12 @@ ripmin = float(sys.argv[2])
 riplength =  ripmin * 60 # length of rip (in seconds)
 
 # locations of files on the local server
-outputfolder = "/var/www/html/podcast/media/%s/" % (programname)  #MP3 is stored locally here
-httppath = "http://192.168.1.198/podcast/media/%s/" % (programname)   #podcast MP3 is served out by web server at this URL
-localRSSfile = "/var/www/html/podcast/%s.xml" % (programname)        #XML file containing the local copy of RSS feed
+outputfolder = "/var/www/html/podcast/media/{}/".format(programname)  #MP3 is stored locally here
+httppath = "http://192.168.1.198/podcast/media/{}/".format(programname)   #podcast MP3 is served out by web server at this URL
+localRSSfile = "/var/www/html/podcast/{}.xml".format(programname)        #XML file containing the local copy of RSS feed
 
 # Log file
-logpath = "%slog.txt" % (outputfolder)   #log file stores info on script errors and behavior
+logpath = "{}log.txt".format(outputfolder)   #log file stores info on script errors and behavior
 
 # open the log file to append new info
 if os.path.exists(logpath):
