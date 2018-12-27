@@ -1,0 +1,326 @@
+{
+    "feed": {
+        "title": "Top Audio Podcasts",
+        "id": "https://rss.itunes.apple.com/api/v1/us/podcasts/top-podcasts/all/10/explicit.json",
+        "author": {
+            "name": "iTunes Store",
+            "uri": "http://wwww.apple.com/us/itunes/"
+        },
+        "links": [
+            {
+                "self": "https://rss.itunes.apple.com/api/v1/us/podcasts/top-podcasts/all/10/explicit.json"
+            },
+            {
+                "alternate": "https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewTop?genreId=26\u0026popId=28"
+            }
+        ],
+        "copyright": "Copyright © 2018 Apple Inc. All rights reserved.",
+        "country": "us",
+        "icon": "http://itunes.apple.com/favicon.ico",
+        "updated": "2018-12-25T02:05:17.000-08:00",
+        "results": [
+            {
+                "artistName": "Wondery",
+                "id": "1421573955",
+                "releaseDate": "2018-12-12",
+                "name": "Dr. Death",
+                "kind": "podcast",
+                "copyright": "© 2018 Wondery, Inc.",
+                "artistId": "1134742667",
+                "contentAdvisoryRating": "Explicit",
+                "artistUrl": "https://itunes.apple.com/us/artist/wondery/1134742667?mt=2",
+                "artworkUrl100": "https://is2-ssl.mzstatic.com/image/thumb/Music128/v4/ec/99/64/ec996492-dec4-5e86-69bc-c9984f512305/source/200x200bb.png",
+                "genres": [
+                    {
+                        "genreId": "1315",
+                        "name": "Science \u0026 Medicine",
+                        "url": "https://itunes.apple.com/us/genre/id1315"
+                    },
+                    {
+                        "genreId": "26",
+                        "name": "Podcasts",
+                        "url": "https://itunes.apple.com/us/genre/id26"
+                    },
+                    {
+                        "genreId": "1307",
+                        "name": "Health",
+                        "url": "https://itunes.apple.com/us/genre/id1307"
+                    }
+                ],
+                "url": "https://itunes.apple.com/us/podcast/dr-death/id1421573955?mt=2"
+            },
+            {
+                "artistName": "Joe Rogan",
+                "id": "360084272",
+                "releaseDate": "2018-12-12",
+                "name": "The Joe Rogan Experience",
+                "kind": "podcast",
+                "copyright": "Copyright © Talking Monkey Productions",
+                "artistId": "974891224",
+                "contentAdvisoryRating": "Explicit",
+                "artistUrl": "https://itunes.apple.com/us/artist/joe-rogan/974891224?mt=2",
+                "artworkUrl100": "https://is1-ssl.mzstatic.com/image/thumb/Music127/v4/d0/e6/5f/d0e65f81-c2cf-7f59-38e4-6abcfab7e38a/source/200x200bb.png",
+                "genres": [
+                    {
+                        "genreId": "1303",
+                        "name": "Comedy",
+                        "url": "https://itunes.apple.com/us/genre/id1303"
+                    },
+                    {
+                        "genreId": "26",
+                        "name": "Podcasts",
+                        "url": "https://itunes.apple.com/us/genre/id26"
+                    },
+                    {
+                        "genreId": "1318",
+                        "name": "Technology",
+                        "url": "https://itunes.apple.com/us/genre/id1318"
+                    },
+                    {
+                        "genreId": "1450",
+                        "name": "Podcasting",
+                        "url": "https://itunes.apple.com/us/genre/id1450"
+                    },
+                    {
+                        "genreId": "1324",
+                        "name": "Society \u0026 Culture",
+                        "url": "https://itunes.apple.com/us/genre/id1324"
+                    }
+                ],
+                "url": "https://itunes.apple.com/us/podcast/the-joe-rogan-experience/id360084272?mt=2"
+            },
+            {
+                "artistName": "L.A. Times | Wondery",
+                "id": "1272970334",
+                "releaseDate": "2018-11-21",
+                "name": "Dirty John",
+                "kind": "podcast",
+                "copyright": "© 2017 All Rights Reserved.",
+                "artistId": "1134742667",
+                "artistUrl": "https://itunes.apple.com/us/artist/l-a-times-wondery/1134742667?mt=2",
+                "artworkUrl100": "https://is2-ssl.mzstatic.com/image/thumb/Music125/v4/ce/3d/b4/ce3db4c8-86ba-29ca-8cb0-4cd68388efeb/source/200x200bb.png",
+                "genres": [
+                    {
+                        "genreId": "1302",
+                        "name": "Personal Journals",
+                        "url": "https://itunes.apple.com/us/genre/id1302"
+                    },
+                    {
+                        "genreId": "26",
+                        "name": "Podcasts",
+                        "url": "https://itunes.apple.com/us/genre/id26"
+                    },
+                    {
+                        "genreId": "1324",
+                        "name": "Society \u0026 Culture",
+                        "url": "https://itunes.apple.com/us/genre/id1324"
+                    }
+                ],
+                "url": "https://itunes.apple.com/us/podcast/dirty-john/id1272970334?mt=2"
+            },
+            {
+                "artistName": "This American Life",
+                "id": "917918570",
+                "releaseDate": "2018-11-15",
+                "name": "Serial",
+                "kind": "podcast",
+                "copyright": "© Copyright 2018 Serial Podcast",
+                "artistId": "364380278",
+                "artistUrl": "https://itunes.apple.com/us/artist/this-american-life/364380278?mt=2",
+                "artworkUrl100": "https://is4-ssl.mzstatic.com/image/thumb/Music71/v4/61/59/94/615994ff-21b5-9817-3e89-09b7e012336d/source/200x200bb.png",
+                "genres": [
+                    {
+                        "genreId": "1311",
+                        "name": "News \u0026 Politics",
+                        "url": "https://itunes.apple.com/us/genre/id1311"
+                    },
+                    {
+                        "genreId": "26",
+                        "name": "Podcasts",
+                        "url": "https://itunes.apple.com/us/genre/id26"
+                    }
+                ],
+                "url": "https://itunes.apple.com/us/podcast/serial/id917918570?mt=2"
+            },
+            {
+                "artistName": "MSNBC, Rachel Maddow",
+                "id": "1438463967",
+                "releaseDate": "2018-12-04",
+                "name": "Bag Man",
+                "kind": "podcast",
+                "copyright": "© Copyright © 2018 NBC News",
+                "artistId": "119945391",
+                "artistUrl": "https://itunes.apple.com/us/artist/msnbc-rachel-maddow/119945391?mt=2",
+                "artworkUrl100": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/11/5b/44/115b44cc-190a-7408-9731-6196a8356a37/source/200x200bb.png",
+                "genres": [
+                    {
+                        "genreId": "1311",
+                        "name": "News \u0026 Politics",
+                        "url": "https://itunes.apple.com/us/genre/id1311"
+                    },
+                    {
+                        "genreId": "26",
+                        "name": "Podcasts",
+                        "url": "https://itunes.apple.com/us/genre/id26"
+                    }
+                ],
+                "url": "https://itunes.apple.com/us/podcast/bag-man/id1438463967?mt=2"
+            },
+            {
+                "artistName": "Corinne Crabtree",
+                "id": "1233384453",
+                "releaseDate": "2018-12-08",
+                "name": "Losing 100 Pounds with Phit-n-Phat: Real diet talk from someone who defeated a lifetime of obesity and now teaches you.",
+                "kind": "podcast",
+                "copyright": "© Phit-N-Phat Personal Training, LLC",
+                "contentAdvisoryRating": "Explicit",
+                "artworkUrl100": "https://is3-ssl.mzstatic.com/image/thumb/Music111/v4/96/75/18/9675182d-ef60-b467-ff5b-4d5c5cb2458c/source/200x200bb.png",
+                "genres": [
+                    {
+                        "genreId": "1417",
+                        "name": "Fitness \u0026 Nutrition",
+                        "url": "https://itunes.apple.com/us/genre/id1417"
+                    },
+                    {
+                        "genreId": "26",
+                        "name": "Podcasts",
+                        "url": "https://itunes.apple.com/us/genre/id26"
+                    },
+                    {
+                        "genreId": "1307",
+                        "name": "Health",
+                        "url": "https://itunes.apple.com/us/genre/id1307"
+                    },
+                    {
+                        "genreId": "1304",
+                        "name": "Education",
+                        "url": "https://itunes.apple.com/us/genre/id1304"
+                    },
+                    {
+                        "genreId": "1470",
+                        "name": "Training",
+                        "url": "https://itunes.apple.com/us/genre/id1470"
+                    },
+                    {
+                        "genreId": "1305",
+                        "name": "Kids \u0026 Family",
+                        "url": "https://itunes.apple.com/us/genre/id1305"
+                    }
+                ],
+                "url": "https://itunes.apple.com/us/podcast/losing-100-pounds-phit-n-phat-real-diet-talk-from-someone/id1233384453?mt=2"
+            },
+            {
+                "artistName": "iHeartRadio \u0026 Glamour",
+                "id": "1434603257",
+                "releaseDate": "2018-12-11",
+                "name": "Broken Harts",
+                "kind": "podcast",
+                "artistId": "284341002",
+                "artistUrl": "https://itunes.apple.com/us/artist/iheartradio-glamour/284341002?mt=2",
+                "artworkUrl100": "https://is5-ssl.mzstatic.com/image/thumb/Music118/v4/b3/e3/c4/b3e3c483-e1ac-aff4-b7ec-92a27e083bb1/source/200x200bb.png",
+                "genres": [
+                    {
+                        "genreId": "1324",
+                        "name": "Society \u0026 Culture",
+                        "url": "https://itunes.apple.com/us/genre/id1324"
+                    },
+                    {
+                        "genreId": "26",
+                        "name": "Podcasts",
+                        "url": "https://itunes.apple.com/us/genre/id26"
+                    }
+                ],
+                "url": "https://itunes.apple.com/us/podcast/broken-harts/id1434603257?mt=2"
+            },
+            {
+                "artistName": "The New York Times",
+                "id": "1200361736",
+                "releaseDate": "2018-12-12",
+                "name": "The Daily",
+                "kind": "podcast",
+                "copyright": "© 2018",
+                "artistId": "121664449",
+                "artistUrl": "https://itunes.apple.com/us/artist/the-new-york-times/121664449?mt=2",
+                "artworkUrl100": "https://is4-ssl.mzstatic.com/image/thumb/Music122/v4/1b/83/76/1b8376aa-90a9-eae1-662d-2b24faf1bf6e/source/200x200bb.png",
+                "genres": [
+                    {
+                        "genreId": "1311",
+                        "name": "News \u0026 Politics",
+                        "url": "https://itunes.apple.com/us/genre/id1311"
+                    },
+                    {
+                        "genreId": "26",
+                        "name": "Podcasts",
+                        "url": "https://itunes.apple.com/us/genre/id26"
+                    }
+                ],
+                "url": "https://itunes.apple.com/us/podcast/the-daily/id1200361736?mt=2"
+            },
+            {
+                "artistName": "iHeartRadio \u0026 Tenderfoot TV",
+                "id": "1324249769",
+                "releaseDate": "2018-12-04",
+                "name": "Atlanta Monster",
+                "kind": "podcast",
+                "copyright": "© Copyright 2017 HowStuffWorks and Tenderfoot TV",
+                "artistId": "284341002",
+                "contentAdvisoryRating": "Explicit",
+                "artistUrl": "https://itunes.apple.com/us/artist/iheartradio-tenderfoot-tv/284341002?mt=2",
+                "artworkUrl100": "https://is3-ssl.mzstatic.com/image/thumb/Music118/v4/14/18/8e/14188ed9-343a-6d61-40b4-89aa17212f6b/source/200x200bb.png",
+                "genres": [
+                    {
+                        "genreId": "1324",
+                        "name": "Society \u0026 Culture",
+                        "url": "https://itunes.apple.com/us/genre/id1324"
+                    },
+                    {
+                        "genreId": "26",
+                        "name": "Podcasts",
+                        "url": "https://itunes.apple.com/us/genre/id26"
+                    }
+                ],
+                "url": "https://itunes.apple.com/us/podcast/atlanta-monster/id1324249769?mt=2"
+            },
+            {
+                "artistName": "This American Life",
+                "id": "201671138",
+                "releaseDate": "2018-12-09",
+                "name": "This American Life",
+                "kind": "podcast",
+                "copyright": "© Copyright 1995-2016 Ira Glass",
+                "artistId": "364380278",
+                "contentAdvisoryRating": "Explicit",
+                "artistUrl": "https://itunes.apple.com/us/artist/this-american-life/364380278?mt=2",
+                "artworkUrl100": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/95/90/7d/95907d71-0f30-e954-c56b-279725ee60aa/source/200x200bb.png",
+                "genres": [
+                    {
+                        "genreId": "1302",
+                        "name": "Personal Journals",
+                        "url": "https://itunes.apple.com/us/genre/id1302"
+                    },
+                    {
+                        "genreId": "26",
+                        "name": "Podcasts",
+                        "url": "https://itunes.apple.com/us/genre/id26"
+                    },
+                    {
+                        "genreId": "1324",
+                        "name": "Society \u0026 Culture",
+                        "url": "https://itunes.apple.com/us/genre/id1324"
+                    },
+                    {
+                        "genreId": "1301",
+                        "name": "Arts",
+                        "url": "https://itunes.apple.com/us/genre/id1301"
+                    },
+                    {
+                        "genreId": "1311",
+                        "name": "News \u0026 Politics",
+                        "url": "https://itunes.apple.com/us/genre/id1311"
+                    }
+                ],
+                "url": "https://itunes.apple.com/us/podcast/this-american-life/id201671138?mt=2"
+            }
+        ]
+    }
+}
