@@ -4,7 +4,7 @@ from datetime import date
 
 # get the KCRW tracklist for the current date
 
-def get_playlist(starttime = "06:00"):
+def get_playlist(starttime = "09:00"):
 
     t = date.today()
     playlist_url = r'https://tracklist-api.kcrw.com/Simulcast/date/{}/{}/{}'.format(t.year, t.month, t.day) 
