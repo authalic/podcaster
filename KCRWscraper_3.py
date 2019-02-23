@@ -14,7 +14,7 @@ import requests
 # Tracklist API returns a JSON file with show info and track list
 
 def getShowInfo(programName, today):
-    '''Returns the program summary from the KCRW playlist page''''
+    '''Returns the program summary from the KCRW playlist page'''
 
     # extract the year, month, and day as strings
     year = str(today[0])
@@ -29,6 +29,8 @@ def getShowInfo(programName, today):
 
     # get the program info from the API
     # get the complete tracklist from the specified date
+    # format:  http://tracklist-api.kcrw.com/Simulcast/date/2019/01/11
+
     alltracklist = requests.get("http://tracklist-api.kcrw.com/Simulcast/date/" + year + "/" + mon + "/" + day).json()
 
     # filter out the tracks for the program, using the appropriate 'program_start' key value
@@ -69,7 +71,21 @@ def getShowInfo(programName, today):
     # otherwise, return the full description
     if showText:
         return str(showText)  # convert from Unicode string to String
-    
+
     # if you get here, no show info was obtained
     return "Unable to obtain show info"
-    
+
+
+# create a function to extract comments on a track, if present
+def printcomments(track):
+    alltracklist = requests.get(r'http://tracklist-api.kcrw.com/Simulcast/date/2019/01/10').json()
+
+    for track in alltracklist:
+        if track['comments']:
+            print(track['comments'])
+
+
+if __name__ == "__main__":
+    # for testing functions
+
+    pass

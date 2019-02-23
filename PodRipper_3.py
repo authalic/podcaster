@@ -17,85 +17,90 @@ Goals for this version:
 
 '''
 
-import urllib
+import urllib  # <--- use requests instead
+import requests
 import time
 import sys
 import tempfile
 import os.path
 import shutil  # high-level operations on files (copy and removal)
-import KCRWscraper  # provides method for obtaining episode description from the KCRW playlist site
+import KCRWscraper_3  # provides method for obtaining episode description from the KCRW playlist site
 from mutagen.mp3 import MP3  # MP3 ID3 Tagging
 from mutagen.id3 import TIT2, TPE1, TALB, TYER, TCON  # ID3 Tags
 
 
-# name of program to be recorded
-programname = sys.argv[1]  #currently supported:  "MBE" | "Rollins" | "Metropolis"
 
-# length of program to be recorded
-ripmin = float(sys.argv[2])
-riplength =  ripmin * 60 # length of rip (in seconds)
+class show:
 
-# locations of files on the local server
-outputfolder = "/var/www/html/podcast/media/{}/".format(programname)  #MP3 is stored locally here
-httppath = "http://192.168.1.198/podcast/media/{}/".format(programname)   #podcast MP3 is served out by web server at this URL
-localRSSfile = "/var/www/html/podcast/{}.xml".format(programname)        #XML file containing the local copy of RSS feed
+    streamURL = "http://kcrw.streamguys1.com/kcrw_192k_mp3_on_air"  # updated Nov 2016
 
-# Log file
-logpath = "{}log.txt".format(outputfolder)   #log file stores info on script errors and behavior
+    def __init__(self):
 
-# open the log file to append new info
-if os.path.exists(logpath):
-    logfile = open(logpath, 'a')
-else:
-    logfile = open(logpath, 'w')
+        # name of program to be recorded
+        self.programname = sys.argv[1]  #currently supported:  "MBE" | "Rollins" | "Metropolis"
 
-# redirect stderr and stdout to logfile
-sys.stderr = logfile
-sys.stdout = logfile
+        # length of program to be recorded
+        self.ripmin = float(sys.argv[2])
+        self.riplength =  ripmin * 60 # length of rip (in seconds)
 
-# get the current date for the show info lookup, in case the date changes before the end of the recording
-# Potential problem:
-# Raspberry Pi must be set to local timezone using raspi-config utility
-today = time.localtime()
+        # locations of files on the local server
 
-streamURL = "http://kcrw.streamguys1.com/kcrw_192k_mp3_on_air"  # updated Nov 2016
+        #MP3 is stored locally here
+        self.outputfolder = "/var/www/html/podcast/media/{}/".format(self.programname)
 
-def getPubDate():
-    #create pubDate value for the tag in the RSS file
-    pubDate = time.strftime("%a, %d %b %Y %H:%M:%S GMT", time.gmtime())
-    return pubDate
-    
-pubDate = getPubDate()
+        #podcast MP3 is served out by web server at this URL
+        self.httppath = "http://192.168.1.198/podcast/media/{}/".format(self.programname)
+
+        #XML file containing the local copy of RSS feed
+        self.localRSSfile = "/var/www/html/podcast/{}.xml".format(self.programname)        
+
+        # Log file
+        self.logpath = "{}log.txt".format(self.outputfolder)   #log file stores info on script errors and behavior
+
+        #obtain the start date/time of the rip
+        self.pubDate_str = time.strftime("%B %d, %Y - %A")      #'July 03, 2007 - Tuesday'
+        self.pubDate_iso = time.strftime("%a, %d %b %Y %H:%M:%S GMT", time.gmtime())
 
 
-def createFilename(programname):
+    def writelog(logmessage):
 
-    #create filename datestamp
-    year = today[0]
-    month = today[1]
-    day = today[2]
-    
-    #creates filename without extension
-    filename = programname + "_" + str(year) + "_" + str(month).zfill(2) + "_" + str(day).zfill(2)
-    return filename
+        # open the log file to write/append new info
+        if os.path.exists(self.logpath):
+            with open(self.logpath, 'a') as logfile:
+                logfile.write(logmessage)
+        else:
+            with open(self.logpath, 'w') as logfile:
+                logfile.write(logmessages)
+
+
+    def createFilename():
+        # get the current date for the show info lookup, in case the date changes before the end of the recording
+        # Potential problem:
+        # Raspberry Pi must be set to local timezone using raspi-config utility
+        today = time.localtime()
+
+        #create filename datestamp
+        year = today[0]
+        month = today[1]
+        day = today[2]
+        
+        #creates filename without extension
+        filename = self.programname + "_" + str(year) + "_" + str(month).zfill(2) + "_" + str(day).zfill(2)
+        return filename
  
-filename = createFilename(programname)
+
+    def createlocalMP3file():
+
+        #creates full path to final locally saved output file, with extension
+        localMP3file = self.outputfolder + self.filename + ".mp3"
+        return localMP3file
 
 
-def createlocalMP3file(filename):
-
-    #creates full path to final locally saved output file, with extension
-    localMP3file = outputfolder + filename + ".mp3"
-    return localMP3file
-
-localMP3file = createlocalMP3file(filename)
+    def ripstream():
+        #create a temporary file to store ripped bytes
+        ripfile = tempfile.NamedTemporaryFile(mode='wb', delete=False)  
 
 
-#create a temporary file to store ripped bytes
-ripfile = tempfile.NamedTemporaryFile(mode='wb', delete=False)  
-
-#obtain the start time/date of the rip for the RSS feed
-itemtitle = time.strftime("%B %d, %Y - %A")               #'July 03, 2007 - Tuesday'
 
 #start ripping
 
@@ -178,7 +183,7 @@ itemlength = os.path.getsize(localMP3file) #size of file in bytes
 
 
 # add the new item to the XML feed
-# This should probably be done using a framework
+# This should  be done using a framework
 
 newitem = '''
 
@@ -217,7 +222,20 @@ newRSS.close()
 logfile.write("XML file updated.\n")
 logfile.write("Operation complete at " + time.asctime() + "\n\n\n")
 
+
+
+# redirect stderr and stdout to logfile
+sys.stderr = logfile
+sys.stdout = logfile
+
 #close the log file and restore stdout and stderr
 sys.stdout = sys.__stdout__
 sys.stderr = sys.__stderr__
-logfile.close()
+
+
+
+# testing starts here
+
+if __name__ == '__main__':
+    print("testing")
+

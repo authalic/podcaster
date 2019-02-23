@@ -1,6 +1,7 @@
 .vscode
 .vscode/settings.json
 .pydevproject
-test.mp3
 podcast_sample.xml
 ve
+*.mp3
+*.pyc

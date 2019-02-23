@@ -1,19 +1,40 @@
 
 import requests
+import time
+from datetime import datetime
+from datetime import timedelta
 
-kcrw = r'http://kcrw.streamguys1.com/kcrw_192k_mp3_on_air'
 
-filename = r'test.mp3'
+bbc6 = r'http://bbcmedia.ic.llnwd.net/stream/bbcmedia_6music_mf_p'
+filename = r'/Users/justin/Projects/Python/podcaster/bbc6_runtest.mp3'
 
+r = requests.get(bbc6, stream=True)
 
-r = requests.get(kcrw, stream=True)
+duration = 3 # (hours)
 
-chunk_ct = 0
+cnt = 0
 
 with open(filename, 'wb') as fd:
-    for chunk in r.iter_content(chunk_size=128):
-        fd.write(chunk)
-        chunk_ct = chunk_ct + 1
-        if chunk_ct % 10 == 0:
-            print(chunk_ct)
+    t = datetime.now()
 
+    try:
+
+        for chunk in r.iter_content(chunk_size=256):
+            if ((datetime.now() - t) < timedelta(hours=duration)):
+                fd.write(chunk)
+                cnt = cnt + 1
+                if cnt%100 == 0:
+                    print(time.strftime("%H:%M:%S", time.localtime()))
+
+            else:
+                break
+
+    except Exception as e:
+
+        print(type(e))
+        print(e.args)
+        print(e)
+
+        print("\nruntime: " + str(datetime.now() - t))
+
+print("\ndone")
