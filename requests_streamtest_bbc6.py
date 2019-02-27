@@ -9,50 +9,62 @@ from requests.exceptions import ConnectionError, ConnectTimeout, ReadTimeout
 bbc6 = r'http://bbcmedia.ic.llnwd.net/stream/bbcmedia_6music_mf_p'
 filename = r'/Users/justin/Projects/Python/podcaster/bbc6_runtest.mp3'
 
-r = requests.get(bbc6, stream=True, timeout=(3.5, 31)) # timeout(connect, read)
+r = requests.get(bbc6, stream=True, timeout=(30, 12)) # timeout(connect, read)
 
 duration = 3 # (hours)
 
 stoptime = datetime.now() + timedelta(hours=duration)
 
-cnt = 0
 
-with open(filename, 'wb') as fd:
+def ripstream(append=False):
 
-    try:
-        for chunk in r.iter_content(chunk_size=256):
-            if (datetime.now() < stoptime):
+    cntr = 0  # for testing purposes, to demo that the program is still running
+    if append:
+        # an error has occurred to get to this point
+        # restart the streaming and append the new data to the previously stopped data file
 
-                fd.write(chunk)
-                cnt = cnt + 1
-                if cnt%100 == 0:
-                    print(time.strftime("%H:%M:%S", time.localtime()))
+        print("appending to existing file\n")
+        streamstore = open(filename, 'ab')
+    else:
+        # streaming begins here
+        # output is written to a new and empty file
 
-            else:
-                break
+        print("streaming to new file\n")
+        streamstore = open(filename, 'wb')
 
-    except (ConnectionError, ConnectTimeout, ReadTimeout) as e:
-        print("Requests Error")
-        print(type(e))
-        print(e.args)
-        print(e)
+    with streamstore as fd:
 
-    except Exception as e:
-        print("Exception")
-        print(type(e))
-        print(e.args)
-        print(e)
+        print("stop time: ", stoptime)
+        print("streaming...\n")
+
+        try:
+            for chunk in r.iter_content(chunk_size=256):
+                if (datetime.now() < stoptime):
+                    fd.write(chunk)
+                    cntr = cntr + 1
+
+                    if cntr > 1600:
+                        print(time.strftime("%H:%M:%S", time.localtime()))
+                        cntr = 0
+
+                else:
+                    break
+
+        except ConnectionError as e:
+            print("Requests Connection Error\n")
+            print(type(e))
+            print(e.args)
+            print(e)
+            print("\nAttempting to restart stream\n")
+
+            ripstream(append=True)
+
+        except (ConnectTimeout, ReadTimeout) as e:
+            print("Requests Timeout Error")
+            print(type(e))
+            print(e.args)
+            print(e)
+
+ripstream()
 
 print("\ndone")
-
-
-'''
-<class 'requests.exceptions.ConnectionError'>
-(ReadTimeoutError("HTTPConnectionPool(host='bbcmedia.ic.llnwd.net', port=80): Read timed out.",),)
-HTTPConnectionPool(host='bbcmedia.ic.llnwd.net', port=80): Read timed out.
-
-<class 'requests.exceptions.ConnectionError'>
-(ReadTimeoutError("HTTPConnectionPool(host='bbcmedia.ic.llnwd.net', port=80): Read timed out.",),)
-HTTPConnectionPool(host='bbcmedia.ic.llnwd.net', port=80): Read timed out.
-
-'''

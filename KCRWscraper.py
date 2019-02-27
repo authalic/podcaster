@@ -69,7 +69,6 @@ def getShowInfo(programName, today):
     # otherwise, return the full description
     if showText:
         return str(showText)  # convert from Unicode string to String
-    
+
     # if you get here, no show info was obtained
     return "Unable to obtain show info"
-    
