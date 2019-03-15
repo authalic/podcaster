@@ -1,136 +1,202 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" 
-    xmlns:atom="http://www.w3.org/2005/Atom">
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
     <channel>
-        <title>Top Audio Podcasts</title>
-        <link>https://rss.itunes.apple.com/api/v1/us/podcasts/top-podcasts/all/10/explicit.rss</link>
-        <lastBuildDate>Tue, 25 Dec 2018 02:05:17 -0800</lastBuildDate>
-        <atom:link rel="self" type="application/rss+xml" href="https://rss.itunes.apple.com/api/v1/us/podcasts/top-podcasts/all/10/explicit.rss"/>
-        <atom:link rel="alternate" type="text/html" href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewTop?genreId=26&amp;popId=28"/>
-        <description>iTunes Store : Top Audio Podcasts</description>
-        <category>iTunes Store</category>
-        <copyright>Copyright © 2018 Apple Inc. All rights reserved.</copyright>
+        <title>Morning Becomes Eclectic</title>
+        <link>http://192.168.1.198/podcast/MBE.html</link>
+        <language>en-us</language>
+        <description>Daily episode of KCRW's Morning Becomes Eclectic</description>
+        <itunes:image href="http://192.168.1.198/podcast/img/kcrw.jpg"/>
+        <!--  INSERTION POINT  -->
         <item>
-            <title>Dr. Death - Wondery</title>
-            <category domain="https://itunes.apple.com/us/artist/wondery/1134742667?mt=2">Wondery</category>
-            <link>https://itunes.apple.com/us/podcast/dr-death/id1421573955?mt=2</link>
-            <guid>https://itunes.apple.com/us/podcast/dr-death/id1421573955?mt=2</guid>
-            <description>Dr. Death</description>
-            <category>podcast</category>
-            <category>Science &amp; Medicine</category>
-            <category>Podcasts</category>
-            <category>Health</category>
-            <pubDate>Wed, 12 Dec 2018 00:00:00 +0000</pubDate>
+            <title>March 08, 2019 - Friday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_03_08.mp3" length="178690452" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Fri, 08 Mar 2019 17:00:02 GMT</pubDate>
         </item>
         <item>
-            <title>The Joe Rogan Experience - Joe Rogan</title>
-            <category domain="https://itunes.apple.com/us/artist/joe-rogan/974891224?mt=2">Joe Rogan</category>
-            <link>https://itunes.apple.com/us/podcast/the-joe-rogan-experience/id360084272?mt=2</link>
-            <guid>https://itunes.apple.com/us/podcast/the-joe-rogan-experience/id360084272?mt=2</guid>
-            <description>The Joe Rogan Experience</description>
-            <category>podcast</category>
-            <category>Comedy</category>
-            <category>Podcasts</category>
-            <category>Technology</category>
-            <category>Podcasting</category>
-            <category>Society &amp; Culture</category>
-            <pubDate>Wed, 12 Dec 2018 00:00:00 +0000</pubDate>
+            <title>March 07, 2019 - Thursday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_03_07.mp3" length="259280178" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Thu, 07 Mar 2019 17:00:02 GMT</pubDate>
         </item>
         <item>
-            <title>Dirty John - L.A. Times | Wondery</title>
-            <category domain="https://itunes.apple.com/us/artist/l-a-times-wondery/1134742667?mt=2">L.A. Times | Wondery</category>
-            <link>https://itunes.apple.com/us/podcast/dirty-john/id1272970334?mt=2</link>
-            <guid>https://itunes.apple.com/us/podcast/dirty-john/id1272970334?mt=2</guid>
-            <description>Dirty John</description>
-            <category>podcast</category>
-            <category>Personal Journals</category>
-            <category>Podcasts</category>
-            <category>Society &amp; Culture</category>
-            <pubDate>Wed, 21 Nov 2018 00:00:00 +0000</pubDate>
+            <title>March 06, 2019 - Wednesday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_03_06.mp3" length="259260159" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Anne Litt</itunes:summary>
+            <pubDate>Wed, 06 Mar 2019 17:00:02 GMT</pubDate>
         </item>
         <item>
-            <title>Serial - This American Life</title>
-            <category domain="https://itunes.apple.com/us/artist/this-american-life/364380278?mt=2">This American Life</category>
-            <link>https://itunes.apple.com/us/podcast/serial/id917918570?mt=2</link>
-            <guid>https://itunes.apple.com/us/podcast/serial/id917918570?mt=2</guid>
-            <description>Serial</description>
-            <category>podcast</category>
-            <category>News &amp; Politics</category>
-            <category>Podcasts</category>
-            <pubDate>Thu, 15 Nov 2018 00:00:00 +0000</pubDate>
+            <title>March 05, 2019 - Tuesday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_03_05.mp3" length="259220117" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Tue, 05 Mar 2019 17:00:02 GMT</pubDate>
         </item>
         <item>
-            <title>Bag Man - MSNBC, Rachel Maddow</title>
-            <category domain="https://itunes.apple.com/us/artist/msnbc-rachel-maddow/119945391?mt=2">MSNBC, Rachel Maddow</category>
-            <link>https://itunes.apple.com/us/podcast/bag-man/id1438463967?mt=2</link>
-            <guid>https://itunes.apple.com/us/podcast/bag-man/id1438463967?mt=2</guid>
-            <description>Bag Man</description>
-            <category>podcast</category>
-            <category>News &amp; Politics</category>
-            <category>Podcasts</category>
-            <pubDate>Tue, 4 Dec 2018 00:00:00 +0000</pubDate>
+            <title>March 04, 2019 - Monday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_03_04.mp3" length="259220116" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Mon, 04 Mar 2019 17:00:02 GMT</pubDate>
         </item>
         <item>
-            <title>Losing 100 Pounds with Phit-n-Phat: Real diet talk from someone who defeated a lifetime of obesity and now teaches you. - Corinne Crabtree</title>
-            <category domain="">Corinne Crabtree</category>
-            <link>https://itunes.apple.com/us/podcast/losing-100-pounds-phit-n-phat-real-diet-talk-from-someone/id1233384453?mt=2</link>
-            <guid>https://itunes.apple.com/us/podcast/losing-100-pounds-phit-n-phat-real-diet-talk-from-someone/id1233384453?mt=2</guid>
-            <description>Losing 100 Pounds with Phit-n-Phat: Real diet talk from someone who defeated a lifetime of obesity and now teaches you.</description>
-            <category>podcast</category>
-            <category>Fitness &amp; Nutrition</category>
-            <category>Podcasts</category>
-            <category>Health</category>
-            <category>Education</category>
-            <category>Training</category>
-            <category>Kids &amp; Family</category>
-            <pubDate>Sat, 8 Dec 2018 00:00:00 +0000</pubDate>
+            <title>February 14, 2019 - Thursday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_02_14.mp3" length="2621084" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Thu, 14 Feb 2019 17:00:02 GMT</pubDate>
         </item>
         <item>
-            <title>Broken Harts - iHeartRadio &amp; Glamour</title>
-            <category domain="https://itunes.apple.com/us/artist/iheartradio-glamour/284341002?mt=2">iHeartRadio &amp; Glamour</category>
-            <link>https://itunes.apple.com/us/podcast/broken-harts/id1434603257?mt=2</link>
-            <guid>https://itunes.apple.com/us/podcast/broken-harts/id1434603257?mt=2</guid>
-            <description>Broken Harts</description>
-            <category>podcast</category>
-            <category>Society &amp; Culture</category>
-            <category>Podcasts</category>
-            <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
+            <title>February 06, 2019 - Wednesday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_02_06.mp3" length="16508948" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Wed, 06 Feb 2019 17:00:01 GMT</pubDate>
         </item>
         <item>
-            <title>The Daily - The New York Times</title>
-            <category domain="https://itunes.apple.com/us/artist/the-new-york-times/121664449?mt=2">The New York Times</category>
-            <link>https://itunes.apple.com/us/podcast/the-daily/id1200361736?mt=2</link>
-            <guid>https://itunes.apple.com/us/podcast/the-daily/id1200361736?mt=2</guid>
-            <description>The Daily</description>
-            <category>podcast</category>
-            <category>News &amp; Politics</category>
-            <category>Podcasts</category>
-            <pubDate>Wed, 12 Dec 2018 00:00:00 +0000</pubDate>
+            <title>February 04, 2019 - Monday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_02_04.mp3" length="142883117" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Mon, 04 Feb 2019 17:00:02 GMT</pubDate>
         </item>
         <item>
-            <title>Atlanta Monster - iHeartRadio &amp; Tenderfoot TV</title>
-            <category domain="https://itunes.apple.com/us/artist/iheartradio-tenderfoot-tv/284341002?mt=2">iHeartRadio &amp; Tenderfoot TV</category>
-            <link>https://itunes.apple.com/us/podcast/atlanta-monster/id1324249769?mt=2</link>
-            <guid>https://itunes.apple.com/us/podcast/atlanta-monster/id1324249769?mt=2</guid>
-            <description>Atlanta Monster</description>
-            <category>podcast</category>
-            <category>Society &amp; Culture</category>
-            <category>Podcasts</category>
-            <pubDate>Tue, 4 Dec 2018 00:00:00 +0000</pubDate>
+            <title>February 01, 2019 - Friday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_02_01.mp3" length="259280179" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Fri, 01 Feb 2019 17:00:02 GMT</pubDate>
         </item>
         <item>
-            <title>This American Life - This American Life</title>
-            <category domain="https://itunes.apple.com/us/artist/this-american-life/364380278?mt=2">This American Life</category>
-            <link>https://itunes.apple.com/us/podcast/this-american-life/id201671138?mt=2</link>
-            <guid>https://itunes.apple.com/us/podcast/this-american-life/id201671138?mt=2</guid>
-            <description>This American Life</description>
-            <category>podcast</category>
-            <category>Personal Journals</category>
-            <category>Podcasts</category>
-            <category>Society &amp; Culture</category>
-            <category>Arts</category>
-            <category>News &amp; Politics</category>
-            <pubDate>Sun, 9 Dec 2018 00:00:00 +0000</pubDate>
+            <title>January 31, 2019 - Thursday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_31.mp3" length="259260160" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Thu, 31 Jan 2019 17:00:01 GMT</pubDate>
+        </item>
+        <item>
+            <title>January 30, 2019 - Wednesday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_30.mp3" length="234831567" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Wed, 30 Jan 2019 17:00:02 GMT</pubDate>
+        </item>
+        <item>
+            <title>January 29, 2019 - Tuesday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_29.mp3" length="88151071" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Tue, 29 Jan 2019 17:00:02 GMT</pubDate>
+        </item>
+        <item>
+            <title>January 28, 2019 - Monday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_28.mp3" length="27763123" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Mon, 28 Jan 2019 17:00:01 GMT</pubDate>
+        </item>
+        <item>
+            <title>January 25, 2019 - Friday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_25.mp3" length="259300198" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Aaron Byrd</itunes:summary>
+            <pubDate>Fri, 25 Jan 2019 17:00:02 GMT</pubDate>
+        </item>
+        <item>
+            <title>January 24, 2019 - Thursday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_24.mp3" length="258999900" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Thu, 24 Jan 2019 17:00:01 GMT</pubDate>
+        </item>
+        <item>
+            <title>January 23, 2019 - Wednesday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_23.mp3" length="259300201" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Wed, 23 Jan 2019 17:00:01 GMT</pubDate>
+        </item>
+        <item>
+            <title>January 22, 2019 - Tuesday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_22.mp3" length="259300199" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Tue, 22 Jan 2019 17:00:02 GMT</pubDate>
+        </item>
+        <item>
+            <title>January 21, 2019 - Monday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_21.mp3" length="1785715" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Anne Litt</itunes:summary>
+            <pubDate>Mon, 21 Jan 2019 17:00:02 GMT</pubDate>
+        </item>
+        <item>
+            <title>January 18, 2019 - Friday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_18.mp3" length="259300198" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Fri, 18 Jan 2019 17:00:02 GMT</pubDate>
+        </item>
+        <item>
+            <title>January 17, 2019 - Thursday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_17.mp3" length="259300200" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Thu, 17 Jan 2019 17:00:02 GMT</pubDate>
+        </item>
+        <item>
+            <title>January 16, 2019 - Wednesday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_16.mp3" length="259300201" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Wed, 16 Jan 2019 17:00:02 GMT</pubDate>
+        </item>
+        <item>
+            <title>January 15, 2019 - Tuesday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_15.mp3" length="259160059" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Tue, 15 Jan 2019 17:00:02 GMT</pubDate>
+        </item>
+        <item>
+            <title>January 14, 2019 - Monday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_14.mp3" length="259320218" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Mon, 14 Jan 2019 17:00:02 GMT</pubDate>
+        </item>
+        <item>
+            <title>January 11, 2019 - Friday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_11.mp3" length="259300198" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Fri, 11 Jan 2019 17:00:02 GMT</pubDate>
+        </item>
+        <item>
+            <title>January 10, 2019 - Thursday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_10.mp3" length="259320220" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Thu, 10 Jan 2019 17:00:02 GMT</pubDate>
+        </item>
+        <item>
+            <title>January 09, 2019 - Wednesday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_09.mp3" length="259320221" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Wed, 09 Jan 2019 17:00:02 GMT</pubDate>
+        </item>
+        <item>
+            <title>January 08, 2019 - Tuesday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_08.mp3" length="65682773" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Tue, 08 Jan 2019 17:00:01 GMT</pubDate>
+        </item>
+        <item>
+            <title>January 07, 2019 - Monday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_07.mp3" length="259300198" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Mon, 07 Jan 2019 17:00:02 GMT</pubDate>
+        </item>
+        <item>
+            <title>January 04, 2019 - Friday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_04.mp3" length="112328731" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Fri, 04 Jan 2019 17:00:02 GMT</pubDate>
+        </item>
+        <item>
+            <title>January 03, 2019 - Thursday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_03.mp3" length="1735529" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Thu, 03 Jan 2019 17:00:02 GMT</pubDate>
+        </item>
+        <item>
+            <title>January 02, 2019 - Wednesday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_02.mp3" length="259320221" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Jason Bentley</itunes:summary>
+            <pubDate>Wed, 02 Jan 2019 17:00:02 GMT</pubDate>
+        </item>
+        <item>
+            <title>January 01, 2019 - Tuesday</title>
+            <enclosure url="http://192.168.1.198/podcast/media/MBE/MBE_2019_01_01.mp3" length="57213215" type="audio/mpeg"/>
+            <itunes:summary>Hosted by Anthony Valadez</itunes:summary>
+            <pubDate>Tue, 01 Jan 2019 17:00:01 GMT</pubDate>
         </item>
     </channel>
 </rss>

@@ -7,11 +7,11 @@ from requests.exceptions import ConnectionError, ConnectTimeout, ReadTimeout
 
 
 bbc6 = r'http://bbcmedia.ic.llnwd.net/stream/bbcmedia_6music_mf_p'
-filename = r'/Users/justin/Projects/Python/podcaster/bbc6_runtest.mp3'
+filename = r'/Users/justin/Projects/Python/podcaster/bbc6_talktalk.mp3'
 
 r = requests.get(bbc6, stream=True, timeout=(30, 12)) # timeout(connect, read)
 
-duration = 3 # (hours)
+duration = 2.05 # (hours)
 
 stoptime = datetime.now() + timedelta(hours=duration)
 
