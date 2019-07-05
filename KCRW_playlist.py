@@ -2,12 +2,12 @@
 import requests
 from datetime import date
 
-# get the KCRW tracklist for the current date
+# get the KCRW tracklist for the date and start time
 
 def get_playlist(starttime = "09:00"):
 
     t = date.today()
-    playlist_url = r'https://tracklist-api.kcrw.com/Simulcast/date/{}/{}/{}'.format(t.year, t.month, t.day) 
+    playlist_url = r'https://tracklist-api.kcrw.com/Simulcast/date/{}/{}/{}'.format(t.year, t.month, t.day)
     tracklist = requests.get(playlist_url).json()
     playlist = ""
 

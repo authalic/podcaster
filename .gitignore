@@ -6,3 +6,4 @@ ve
 *.mp3
 *.pyc
 *sketch.py
+*.sqlite3
